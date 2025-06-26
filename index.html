@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="./css/aos.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/mdb.min.css">
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/UMD.css" />
+    <link rel="stylesheet" href="./css/mainStyle.css" />
+    <title>Weather</title>
+</head>
+
+<body style="overflow-x: hidden;">
+    <style>
+        .navbar-nav .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #53A1A9;
+        }
+
+        .dropdown-menu {
+            background-color: #264653;
+        }
+
+        .dropdown-item {
+            color: #ffffff;
+        }
+
+        .dropdown-item:hover {
+            background-color: #53A1A9;
+            color: #ffffff;
+        }
+
+        .btn-outline-light:hover {
+            background-color: #53A1A9;
+            border-color: #53A1A9;
+            color: black;
+        }
+
+        .navbar {
+            transition: top 0.3s ease-in-out;
+        }
+
+        footer a {
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #53A1A9;
+        }
+
+        footer .copyright a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+    <nav class="navbar navbar-expand-sm navbar-light sticky-top" style="background-color: #264653;">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">Weather</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon mt-3" style="color: #ffffff;"><i
+                        class="bi bi-arrow-90deg-down"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="#" aria-current="page">Home <span
+                                class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Info</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main id="main">
+        <div class="container mt-5">
+            <div class="form-floating m-5 d-flex">
+                <input data-aos="fade-down-right" data-aos-delay="200" type="text" class="form-control city-input" id="cityName" placeholder="Enter city name">
+                <label for="cityName" class="label-color" data-aos="fade-down-right" data-aos-delay="200">Enter City Name</label>
+                <button data-aos="fade-left" data-aos-delay="300" type="button" class="btn btn-dark " data-mdb-ripple-init><i class="bi bi-cursor-fill"
+                        style="font-size: 17px;"></i></button>
+            </div>
+        </div>
+        <section class="mainWeatherContainer">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <!-- First Card -->
+                    <div class="col-12 col-md-6 mb-4">
+                        <div class="card bg-dark text-white" style="border-radius: 40px;" data-aos="fade-down"
+                            data-aos-delay="200">
+                            <div class="bg-image" style="border-radius: 35px;">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/draw1.webp"
+                                    class="card-img" alt="weather" />
+                                <div class="mask" style="background-color: rgba(190, 216, 232, .5);"></div>
+                            </div>
+                            <div class="card-img-overlay text-dark p-5">
+                                <h4 class="mb-0">Juneau, Alaska, US</h4>
+                                <h4 class="mb-0">23/6/2025 (Monday)</h4>
+                                <p class="display-2 my-3">1.28°C</p>
+                                <p class="mb-2">Feels Like: <strong>-1.08 °C</strong></p>
+                                <h5 class="w-100">Snowy /
+                                    <i class="bi bi-umbrella-fill" style="font-size: 17px;"></i><i class="m-2"
+                                        style="font-size: 14px;">20%</i>
+                                    <i class="bi bi-fan" style="font-size: 17px;"></i><i class="m-2"
+                                        style="font-size: 14px;">20 KM/H</i>
+                                    <i class="bi bi-compass-fill" style="font-size: 17px;"></i><i class="m-2"
+                                        style="font-size: 14px;">East</i>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Second Card -->
+                    <div class="col-12 col-md-6 mb-4">
+                        <div class="card bg-dark text-white" style="border-radius: 40px;" data-aos="fade-down"
+                            data-aos-delay="300">
+                            <div class="bg-image" style="border-radius: 35px;">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/draw1.webp"
+                                    class="card-img" alt="weather" />
+                                <div class="mask" style="background-color: rgba(190, 216, 232, .5);"></div>
+                            </div>
+                            <div class="card-img-overlay text-dark p-5">
+                                <h4 class="mb-0">Juneau, Alaska, US</h4>
+                                <h4 class="mb-0">23/6/2025 (Monday)</h4>
+                                <p class="display-2 my-3">1.28°C</p>
+                                <p class="mb-2">Feels Like: <strong>-1.08 °C</strong></p>
+                                <h5 class="w-100">Snowy /
+                                    <i class="bi bi-umbrella-fill" style="font-size: 17px;"></i></i><i class="m-2"
+                                        style="font-size: 14px;">20%</i>
+                                    <i class="bi bi-fan" style="font-size: 17px;"></i></i><i class="m-2"
+                                        style="font-size: 14px;">20 KM/H</i>
+                                    <i class="bi bi-compass-fill" style="font-size: 17px;"></i><i class="m-2"
+                                        style="font-size: 14px;">East</i>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Third Card -->
+                    <div class="col-12 col-md-6 mb-4">
+                        <div class="card bg-dark text-white" style="border-radius: 40px;" data-aos="fade-down"
+                            data-aos-delay="400">
+                            <div class="bg-image" style="border-radius: 35px;">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/draw1.webp"
+                                    class="card-img" alt="weather" />
+                                <div class="mask" style="background-color: rgba(190, 216, 232, .5);"></div>
+                            </div>
+                            <div class="card-img-overlay text-dark p-5">
+                                <h4 class="mb-0">Juneau, Alaska, US</h4>
+                                <h4 class="mb-0">23/6/2025 (Monday)</h4>
+                                <p class="display-2 my-3">1.28°C</p>
+                                <p class="mb-2">Feels Like: <strong>-1.08 °C</strong></p>
+                                <h5 class="w-100">Snowy /
+                                    <i class="bi bi-umbrella-fill" style="font-size: 17px;"></i><i class="m-2"
+                                        style="font-size: 14px;">20%</i>
+                                    <i class="bi bi-fan" style="font-size: 17px;"></i><i class="m-2"
+                                        style="font-size: 14px;">20 KM/H</i>
+                                    <i class="bi bi-compass-fill" style="font-size: 17px;"></i><i class="m-2"
+                                        style="font-size: 14px;">East</i>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fourth Card -->
+                    <div class="col-12 col-md-6 mb-4">
+                        <div class="card bg-dark text-white" style="border-radius: 40px;" data-aos="fade-down"
+                            data-aos-delay="500">
+                            <div class="bg-image" style="border-radius: 35px;">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/draw1.webp"
+                                    class="card-img" alt="weather" />
+                                <div class="mask" style="background-color: rgba(190, 216, 232, .5);"></div>
+                            </div>
+                            <div class="card-img-overlay text-dark p-5">
+                                <h4 class="mb-0">Juneau, Alaska, US</h4>
+                                <h4 class="mb-0">23/6/2025 (Monday)</h4>
+                                <p class="display-2 my-3">1.28°C</p>
+                                <p class="mb-2">Feels Like: <strong>-1.08 °C</strong></p>
+                                <h5 class="w-100">Snowy /
+                                    <i class="bi bi-umbrella-fill" style="font-size: 17px;"></i><i class="m-2"
+                                        style="font-size: 14px;">20%</i>
+                                    <i class="bi bi-fan" style="font-size: 17px;"></i><i class="m-2"
+                                        style="font-size: 14px;">20 KM/H</i>
+                                    <i class="bi bi-compass-fill" style="font-size: 17px;"></i><i class="m-2"
+                                        style="font-size: 14px;">East</i>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <footer class="text-center text-lg-start text-white" style="background-color: #264653;">
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <div data-aos="fade-right" data-aos-duration="600" class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i data-aos="fade-right" data-aos-duration="500" class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i data-aos="fade-right" data-aos-duration="550" class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i data-aos="fade-right" data-aos-duration="600" class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i data-aos="fade-right" data-aos-duration="650" class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i data-aos="fade-right" data-aos-duration="700" class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i data-aos="fade-right" data-aos-duration="750" class="fab fa-github"></i>
+                </a>
+            </div>
+        </section>
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i data-aos="fade-right" data-aos-duration="400" class="fas fa-gem me-3"></i>company name
+                        </h6>
+                        <p data-aos="fade-right" data-aos-duration="400">
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 data-aos="fade-right" data-aos-duration="500" class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p data-aos="fade-right" data-aos-duration="500">
+                            <a href="#!" class="text-reset">Angular</a>
+                        </p>
+                        <p data-aos="fade-right" data-aos-duration="500">
+                            <a href="#!" class="text-reset">React</a>
+                        </p>
+                        <p data-aos="fade-right" data-aos-duration="500">
+                            <a href="#!" class="text-reset">Vue</a>
+                        </p>
+                        <p data-aos="fade-right" data-aos-duration="500">
+                            <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 data-aos="fade-right" data-aos-duration="600" class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p data-aos="fade-right" data-aos-duration="600">
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p data-aos="fade-right" data-aos-duration="600">
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p data-aos="fade-right" data-aos-duration="600">
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p data-aos="fade-right" data-aos-duration="600">
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 data-aos="fade-right" data-aos-duration="700" class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p data-aos="fade-right" data-aos-duration="700"><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p data-aos="fade-right" data-aos-duration="700">
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p data-aos="fade-right" data-aos-duration="700"><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p data-aos="fade-right" data-aos-duration="700"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="text-center p-4 copyright"
+            style="background-color: #264653; border-top: 2px solid rgb(255, 255, 255);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+    </footer>
+    <script src="./js/mdb.umd.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap.min.js.map"></script>
+    <script src="./js/aos.js"></script>
+    <script src="./js/UMD.js"></script>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', function () {
+            let currentScroll = window.scrollY;
+            if (currentScroll > lastScrollTop) {
+                navbar.style.top = '-100px'; 
+            } else {
+                navbar.style.top = '0'; 
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+        document.addEventListener('click', function (event) {
+            const navbarCollapse = document.getElementById('collapsibleNavId');
+            const isClickInsideNavbar = navbarCollapse.contains(event.target) || event.target.classList.contains('navbar-toggler');
+            if (!isClickInsideNavbar && navbarCollapse.classList.contains('show')) {
+                bootstrap.Collapse.getInstance(navbarCollapse).hide();
+            }
+        });
+        document.addEventListener('click', function (event) {
+            const navbarCollapse = document.getElementById('collapsibleNavId');
+            const isClickInsideNavbar = navbarCollapse.contains(event.target) || event.target.classList.contains('navbar-toggler');
+            if (!isClickInsideNavbar && navbarCollapse.classList.contains('show')) {
+                bootstrap.Collapse.getInstance(navbarCollapse).hide();
+            }
+        });
+    </script>
+    <script src="./js/main.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
